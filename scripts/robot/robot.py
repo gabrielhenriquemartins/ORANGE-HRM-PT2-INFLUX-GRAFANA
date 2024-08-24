@@ -63,10 +63,10 @@ retention_policy = "30d"
 #            Get values from command line        #
 # ---------------------------------------------- #
 def get_values_in_command_line():
-    global directory, backup_dir_influxdb, backup_dir_jenkins
+    global directory
     if len(sys.argv) == 2:
         directory = sys.argv[1]
-        print(f'Cypress Directory: {directory}')
+        print(f'Robot Directory: {directory}')
     else:
         print("Not enough arguments provided.")
     
