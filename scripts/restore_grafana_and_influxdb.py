@@ -6,12 +6,12 @@ grafana_dir = '/backup/grafana'
 influxdb_dir = '/backup/influxdb'
 jenkins_dir = '/backup/jenkins'
 
-volume_grafana = 'metrics_grafana-storage'
-volume_influxdb = 'metrics_influxdb-storage'
+volume_grafana = 'docker-compose_grafana-storage'
+volume_influxdb = 'docker-compose_influxdb-storage'
 volume_jenkins = 'jenkins_jenkins-home'
 
-grafana_container = "metrics-grafana-1"
-influx_container = "metrics-influxdb-1"
+grafana_container = "docker-compose-grafana-1"
+influx_container = "docker-compose-influxdb-1"
 jenkins_container = "jenkins"
 
 
