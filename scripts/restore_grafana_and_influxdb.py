@@ -1,17 +1,14 @@
 import os
 import subprocess
+import sys
 from datetime import datetime
 
-grafana_dir = '/backup/grafana'
-influxdb_dir = '/backup/influxdb'
-jenkins_dir = '/backup/jenkins'
-
-volume_grafana = 'metrics_grafana-storage'
-volume_influxdb = 'metrics_influxdb-storage'
+volume_grafana = 'docker-compose_grafana-storage'
+volume_influxdb = 'docker-compose_influxdb-storage'
 volume_jenkins = 'jenkins_jenkins-home'
 
-grafana_container = "metrics-grafana-1"
-influx_container = "metrics-influxdb-1"
+grafana_container = "docker-compose-grafana-1"
+influx_container = "docker-compose-influxdb-1"
 jenkins_container = "jenkins"
 
 
@@ -44,7 +41,7 @@ def restore_backup(volume_name, backup_dir, backup_file):
 # ---------------------------------------------- #
 def get_values_in_command_line():
     global backup_dir_grafana, backup_dir_influxdb, backup_dir_jenkins
-    if len(sys.argv) == 3:
+    if len(sys.argv) == 4:
         backup_dir_grafana = sys.argv[1]
         print(f'Grafana Backup: {backup_dir_grafana}')
         backup_dir_influxdb = sys.argv[2]
@@ -55,6 +52,8 @@ def get_values_in_command_line():
         print("Not enough arguments provided.")
 
 if __name__ == "__main__":
+    get_values_in_command_line()
+    
     stop_container(grafana_container)
     restore_backup(volume_grafana, backup_dir_grafana, restore_grafana_file)
     start_container(grafana_container)
