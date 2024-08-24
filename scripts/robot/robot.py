@@ -1,5 +1,6 @@
 import os, time
 import glob
+import sys
 from influxdb_client import InfluxDBClient, Point, WritePrecision, DeleteApi
 from influxdb_client.client.write_api import SYNCHRONOUS
 from influxdb_client.rest import ApiException
