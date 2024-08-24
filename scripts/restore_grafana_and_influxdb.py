@@ -40,14 +40,19 @@ def restore_backup(volume_name, backup_dir, backup_file):
 #            Get values from command line        #
 # ---------------------------------------------- #
 def get_values_in_command_line():
-    global backup_dir_grafana, backup_dir_influxdb, backup_dir_jenkins
-    if len(sys.argv) == 4:
+    global backup_dir_grafana, backup_dir_influxdb, backup_dir_jenkins, restore_influxdb_file, restore_grafana_file
+
+    if len(sys.argv) == 6:
         backup_dir_grafana = sys.argv[1]
         print(f'Grafana Backup: {backup_dir_grafana}')
         backup_dir_influxdb = sys.argv[2]
         print(f'Influx DB Backup: {backup_dir_influxdb}')
         backup_dir_jenkins = sys.argv[3]
         print(f'Jenkins Backup: {backup_dir_jenkins}')
+        restore_influxdb_file = f"influx_backup_{sys.argv[4]}.tar.gz"
+        print(f'Influx Backup: {restore_influxdb_file}')
+        restore_grafana_file = f"grafana_backup_{sys.argv[5]}.tar.gz"
+        print(f'Grafana Backup: {restore_grafana_file}')
     else:
         print("Not enough arguments provided.")
 
