@@ -3,10 +3,6 @@ import subprocess
 import sys
 from datetime import datetime
 
-grafana_dir = '/backup/grafana'
-influxdb_dir = '/backup/influxdb'
-jenkins_dir = '/backup/jenkins'
-
 volume_grafana = 'docker-compose_grafana-storage'
 volume_influxdb = 'docker-compose_influxdb-storage'
 volume_jenkins = 'jenkins_jenkins-home'
