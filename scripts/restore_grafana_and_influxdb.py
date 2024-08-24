@@ -41,7 +41,7 @@ def restore_backup(volume_name, backup_dir, backup_file):
 # ---------------------------------------------- #
 def get_values_in_command_line():
     global backup_dir_grafana, backup_dir_influxdb, backup_dir_jenkins
-    if len(sys.argv) == 3:
+    if len(sys.argv) == 4:
         backup_dir_grafana = sys.argv[1]
         print(f'Grafana Backup: {backup_dir_grafana}')
         backup_dir_influxdb = sys.argv[2]
@@ -52,6 +52,8 @@ def get_values_in_command_line():
         print("Not enough arguments provided.")
 
 if __name__ == "__main__":
+    get_values_in_command_line()
+    
     stop_container(grafana_container)
     restore_backup(volume_grafana, backup_dir_grafana, restore_grafana_file)
     start_container(grafana_container)
