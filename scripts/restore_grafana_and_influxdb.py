@@ -49,7 +49,7 @@ def get_values_in_command_line():
         print(f'Influx DB Backup: {backup_dir_influxdb}')
         backup_dir_jenkins = sys.argv[3]
         print(f'Jenkins Backup: {backup_dir_jenkins}')
-        restore_influxdb_file = f"influx_backup_{sys.argv[4]}.tar.gz"
+        restore_influxdb_file = f"influxdb_backup_{sys.argv[4]}.tar.gz"
         print(f'Influx Backup: {restore_influxdb_file}')
         restore_grafana_file = f"grafana_backup_{sys.argv[5]}.tar.gz"
         print(f'Grafana Backup: {restore_grafana_file}')
@@ -63,6 +63,6 @@ if __name__ == "__main__":
     restore_backup(volume_grafana, backup_dir_grafana, restore_grafana_file)
     start_container(grafana_container)
     
-    # stop_container(influx_container)
-    # restore_backup(volume_influxdb, backup_dir_influxdb, restore_influxdb_file)
-    # start_container(influx_container)
+    stop_container(influx_container)
+    restore_backup(volume_influxdb, backup_dir_influxdb, restore_influxdb_file)
+    start_container(influx_container)
