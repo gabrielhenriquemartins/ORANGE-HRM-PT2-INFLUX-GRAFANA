@@ -389,9 +389,7 @@ def not_executed_not_updated(token, all_tests, days, should_print=True):
         print('\n-----------------------------------------')
         print('------------- TEST OUTDATED -------------')
     all_test_executions = get_all_tests("Test Execution", int(days))
-    recent_test_executions = get_all_tests("Test Execution", int(days))
-    old_tests = [old_test for old_test in recent_test_executions if old_test not in all_test_executions]
-    tests = get_tests_in_test_executions(token, old_tests)
+    tests = get_tests_in_test_executions(token, all_test_executions)
     results = compare_dict_and_array(all_tests, tests, should_print)
     if should_print:
         print('-----------------------------------------')
