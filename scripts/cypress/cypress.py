@@ -10,41 +10,41 @@ from datetime import datetime, timezone
 directory = 'your-report-folder'  #Path to the Cypress Report folder
 
 #Measurements related to the last execution
-measurement_1 = "last_passed_tests"
-measurement_2 = "last_failed_tests"
-measurement_3 = "last_time_to_run_tests"
+measurement_1 = "cy_last_passed"
+measurement_2 = "cy_last_failed"
+measurement_3 = "cy_last_time_to_run"
 
 #Measurements related to all executions
-measurement_4 = "all_passed_tests"
-measurement_5 = "all_failed_tests"
-measurement_6 = "all_time_to_run_tests"
+measurement_4 = "cy_all_passed"
+measurement_5 = "cy_all_failed"
+measurement_6 = "cy_all_time_to_run"
 
 #Number of tests 
-measurement_7 = "number_of_tests"
+measurement_7 = "cy_number_of_tests"
 
 #Pass Ratio
-measurement_8 = "pass_test_ratio"
+measurement_8 = "cy_pass_test_ratio"
 
 #Total executed tests
-measurement_9 = "number_of_tests_executed"
+measurement_9 = "cy_number_of_tests_exec"
 
 #Delta, last two execution time
-measurement_10 = "delta_execution_time"
+measurement_10 = "cy_delta_exec_time"
 
 #Last execution, percentage pass ratio
-measurement_11 = "last_perc_p_ratio"
+measurement_11 = "cy_last_perc_ratio"
 
 #Last execution, percentage pass ratio
-measurement_12 = "all_perc_p_ratio"
+measurement_12 = "cy_all_perc_ratio"
 
 #All, executed tests per day
-measurement_13 = "all_executed_tests_p_day"
+measurement_13 = "cy_all_exec_tests_p_day"
 
 #All, time spent with automation
-measurement_14 = "all_executed_time"
+measurement_14 = "cy_all_exec_time"
 
 #Number of execution
-measurement_15 = "execution_count"
+measurement_15 = "cy_exec_count"
 
 total_tests = 0
 total_pass = 0
